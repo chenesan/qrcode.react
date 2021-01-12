@@ -62,6 +62,7 @@ type QRProps = {
     x?: number,
     y?: number,
   },
+  imgElementProps?: any,
 };
 
 const DEFAULT_PROPS = {
@@ -337,6 +338,7 @@ class QRCodeCanvas extends React.PureComponent<QRProps, {imgLoaded: boolean}> {
       style,
       includeMargin,
       imageSettings,
+      imgElementProps,
       ...otherProps
     } = this.props;
     const canvasStyle = {height: size, width: size, ...style};
@@ -351,6 +353,7 @@ class QRCodeCanvas extends React.PureComponent<QRProps, {imgLoaded: boolean}> {
           ref={(ref: ?HTMLImageElement): ?HTMLImageElement =>
             (this._image = ref)
           }
+          {...imgElementProps}
         />
       );
     }
