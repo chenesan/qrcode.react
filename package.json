@@ -12,6 +12,7 @@
   "scripts": {
     "flow": "flow",
     "lint": "eslint .",
+    "prepare": "flow && make clean && make all",
     "pretty": "prettier --write '{*,.*}.{js,json}' '**/*.{js,json}'",
     "prepublish": "flow && make clean && make all",
     "prepublish-docs": "make clean && make all",
